@@ -16,12 +16,15 @@ var hardButton = document.querySelector("#hardBtn");
 
 
 easyButton.addEventListener("click", function() {
+		messageDisplay.textContent ="";
+	resetButton.textContent = "New Colours";
 	countSquares = 3;
 hardBtn.classList.remove("selected");
 easyBtn.classList.add("selected");
 colors = generateColors(countSquares);
 pickedColor = pickColor();
 colorDisplay.textContent = pickedColor;
+h1.style.backgroundColor = "steelblue";
 
 for (var i = 0; i <squares.length; i++) {
 	if (colors[i]){
@@ -33,12 +36,15 @@ for (var i = 0; i <squares.length; i++) {
 });
 
 hardButton.addEventListener("click", function() {
-	countSquares = 6;
+	messageDisplay.textContent ="";
+resetButton.textContent = "New Colours";			
+countSquares = 6;
 hardBtn.classList.add("selected");
 easyBtn.classList.remove("selected");
 colors = generateColors(countSquares);
 pickedColor = pickColor();
 colorDisplay.textContent = pickedColor;
+h1.style.backgroundColor = "steelblue";
 
 for (var i = 0; i <squares.length; i++) {
 	squares[i].style.backgroundColor = colors[i];
